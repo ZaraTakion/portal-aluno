@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [ra, setRa] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -11,6 +13,7 @@ export default function Login() {
     }
 
     console.log("Login enviado:", { ra, senha });
+    navigate("/dashboard");
   }
 
   return (
